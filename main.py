@@ -19,7 +19,7 @@ userDrew = 0
 #---------------the computer's variables and functions
 
 #contains the computers response
-comp = ''
+compInput = ''
 
 #computer's response
 def compSelection():
@@ -28,13 +28,13 @@ def compSelection():
 
     #if num = 1 then set the comp's value to ROCK
     if(num == 1):
-        comp = 'ROCK'
+        compInput = 'ROCK'
     #if num = 2 then set the comp's value to PAPER
     elif(num == 2):
-        comp = 'PAPER'
+        compInput = 'PAPER'
     #if num = 3 then set the comp's value to SCISSORS
     elif(num == 3):
-        comp = 'SCISSORS'
+        compInput = 'SCISSORS'
 
 
 #contains the user's response 
