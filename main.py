@@ -38,12 +38,12 @@ def compSelection():
 
 
 #contains the user's response 
-user = input("Rock, Paper or Scissors: ")
+userInput = input("Rock, Paper or Scissors: ")
 
 #Turns every letter of user's response to uppercase -> its better for comparison
-user = user.upper()
+userInput = userInput.upper()
 
 #Checking if the users response is valid
-if(user != "ROCK" | user != "PAPER" | user != "SCISSORS"):
+if(userInput != "ROCK" | userInput != "PAPER" | userInput != "SCISSORS"):
     #if its not valid -> ask to user for another response
-    user = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors")
+    userInput = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors")
