@@ -1,12 +1,8 @@
 #---------------------------------------------variables and functions
 import random
 
-#Ask the user the number of rounds that want to play
-numOfRounds = input('Maximum number of rounds - 10, How many rounds do you want to play: ')
-
-#Checking if the number of rounds is not too many
-if numOfRounds > 10:
-    numOfRounds = input('Maximum number of rounds - 10, How many rounds do you want to play: ')
+#Total number of rounds
+numOfRounds = 3
 
 #current round
 currentRound = 0
