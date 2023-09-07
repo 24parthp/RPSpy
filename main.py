@@ -44,6 +44,51 @@ userInput = input("Rock, Paper or Scissors: ")
 userInput = userInput.upper()
 
 #Checking if the users response is valid
-if(userInput != "ROCK" | userInput != "PAPER" | userInput != "SCISSORS"):
+if userInput != "ROCK" | userInput != "PAPER" | userInput != "SCISSORS":
     #if its not valid -> ask to user for another response
     userInput = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors")
+
+#run until currentRound equal numOfRounds
+while currentRound < numOfRounds:
+
+    #When computer's input is ROCK
+    if compInput == 'ROCK' & userInput == 'PAPER':
+        #user wins the round
+        print('Computer: Rock')
+        print('Player: PAPER')
+    if compInput == 'ROCK' & userInput == 'SCISSORS' :
+        #user loses the round
+        print('Computer: Rock')
+        print('Player: Scissors')
+    if compInput == 'ROCK' & userInput == 'ROCK':
+        #user and computer draw
+        print('Computer: Rock')
+        print('Player: Rock')
+
+    #When computer's input is PAPER
+    if compInput == 'PAPER' & userInput == 'SCISSORS':
+        #user wins the round
+        print('Computer: Paper')
+        print('Player: Scissors')
+    if compInput == 'PAPER' & userInput == 'ROCK':
+        #user loses the round
+        print('Computer: Paper')
+        print('Player: Rock')
+    if compInput == 'PAPER' & userInput == 'PAPER':
+        #user and computer draw
+        print('Computer: Paper')
+        print('Player: Paper')
+
+    #When computer's input is SCISSORS
+    if compInput == 'SCISSORS' & userInput == 'ROCK':
+        #user wins the round
+        print('Computer: Scissors')
+        print('Player: Rock')
+    if compInput == 'SCISSORS' & userInput == 'PAPER':
+        #user loses the round
+        print('Computer: Scissors')
+        print('Player: Paper')
+    if compInput == 'SCISSORS' & userInput == 'SCISSORS':
+        #user and computer draw
+        print('Computer: Scissors')
+        print('Player: Scissors')
