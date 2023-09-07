@@ -8,6 +8,8 @@ numOfRounds = input('Maximum number of rounds - 10, How many rounds do you want 
 if numOfRounds > 10:
     numOfRounds = input('Maximum number of rounds - 10, How many rounds do you want to play: ')
 
+currentRound = 0
+
 #Number of rounds user won & lost & drew
 userWon = 0
 userLost = 0
