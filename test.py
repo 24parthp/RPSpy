@@ -1,3 +1,6 @@
+#Boolean var that shows the game is running
+continueGame = True
+
 #rounds user won, lost or drew
 userWon = 0
 userLost = 0
@@ -81,11 +84,17 @@ def round(user,computer):
     
     if userWin == 5:
         print('You Win!')
+        continueGame = False
         exit()
     if userLost == 5:
         print('You Win!')
+        continueGame = False
         exit()
 
 #playes the game
 def game(userSelection):
     round(userSelection, compSelection())
+
+while continueGame:
+    userResponse = input('Rock, Paper, Scissors: ')
+    game(userResponse)
