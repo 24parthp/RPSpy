@@ -3,6 +3,7 @@ userWon = 0
 userLost = 0
 userDrew = 0
 
+#function that generates andreturns computers response
 def compSelection():
     #num equal a random floating point number between 1 and 3, including 3
     num = random.uniform(1,3)
@@ -17,6 +18,7 @@ def compSelection():
     elif(num == 3):
         return 'SCISSORS'
 
+#logic for each round 
 def round(user,computer):
     global userWon
     global userLost
@@ -84,5 +86,6 @@ def round(user,computer):
         print('You Win!')
         exit()
 
+#playes the game
 def game(userSelection):
     round(userSelection, compSelection())
