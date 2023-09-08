@@ -2,7 +2,7 @@
 import random
 
 #Total number of rounds
-numOfRounds = 3
+numOfRounds = 1
 
 #current round
 currentRound = 0
@@ -19,6 +19,8 @@ compInput = ''
 
 #computer's response
 def compSelection():
+    global compInput
+
     #num equal a random floating point number between 1 and 3, including 3
     num = random.uniform(1,3)
 
@@ -32,25 +34,19 @@ def compSelection():
     elif(num == 3):
         compInput = 'SCISSORS'
 
-
-#contains the user's response and turns it uppercase
-userInput = input("Rock, Paper or Scissors: ").upper()
-
-#Checking if the users response is valid
-if userInput != "ROCK" or userInput != "PAPER" or userInput != "SCISSORS":
-    #if its not valid -> ask to user for another response
-    userInput = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors: ")
-
 #run until currentRound equal numOfRounds
 while userWon < numOfRounds and userLost < numOfRounds:
 
-    #always is true
-    while True:
+    # control the userInput loop
+    valid_input = False  
+
+    while not valid_input:
         #gets users input and also turns it uppercase
-        userInput = input("Rock, Paper or Scissors: ").upper
+        userInput = input("Rock, Paper or Scissors: ").upper()
         #checks if the input is valid
         if userInput == "ROCK" or userInput == "PAPER" or userInput == "SCISSORS":
-            break
+            #exits the loop
+            valid_input = True
         else:
             userInput = input("Your previous response was invalid. Try Again. Rock, Paper or Scissors: ")
 
@@ -115,12 +111,12 @@ while userWon < numOfRounds and userLost < numOfRounds:
         print('Computer: Scissors')
         print('Player: Scissors')
 
-    #evaluating the results after all rounds are played
-    if userWon > userLost:
-        print('You won the game!')
-    elif userLost > userWon:
-        print('You lost the game.')
-    else:
-        print('It\'s a tie.')
+#evaluating the results after all rounds are played
+if userWon > userLost:
+    print('You won the game!')
+elif userLost > userWon:
+    print('You lost the game.')
+else:
+    print('It\'s a tie.')
 
 print('Rounds Won:', userWon, 'Rounds Lost:', userLost, 'Rounds Drew:', userDrew)
