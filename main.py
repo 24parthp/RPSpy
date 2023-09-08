@@ -103,6 +103,15 @@ while currentRound <= numOfRounds:
     if compInput == 'SCISSORS' & userInput == 'SCISSORS':
         #user and computer draw
         userDrew = userDrew + 1
-        currentRound = currentRound + 1
         print('Computer: Scissors')
         print('Player: Scissors')
+
+    #evaluating the results
+    if userWon > numOfRounds:
+        print('You Won!')
+        print('Rounds Won: ', userWon, 'Rounds Lost: ', userLost, 'Rounds Drew: ', userDrew)
+        exit()
+    if userLost > numOfRounds:
+        print('You Lost')
+        print('Rounds Won: ', userWon, 'Rounds Lost: ', userLost, 'Rounds Drew: ', userDrew)
+        exit()
