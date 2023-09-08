@@ -40,15 +40,25 @@ userInput = input("Rock, Paper or Scissors: ")
 userInput = userInput.upper()
 
 #Checking if the users response is valid
-if userInput != "ROCK" | userInput != "PAPER" | userInput != "SCISSORS":
+if userInput != "ROCK" or userInput != "PAPER" or userInput != "SCISSORS":
     #if its not valid -> ask to user for another response
     userInput = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors")
 
 #run until currentRound equal numOfRounds
 while currentRound <= numOfRounds:
 
+    #always is true
+    while True:
+        #gets users input and also turns it uppercase
+        userInput = input("Rock, Paper or Scissors: ").upper
+        #checks if the input is valid
+        if userInput == "ROCK" or userInput == "PAPER" or userInput == "SCISSORS":
+            break
+        else:
+            userInput = input("Your previous response was invalid. Try Again. Rock, Paper or Scissors")
+
     compSelection()
-    
+
     #When computer's input is ROCK
     if compInput == 'ROCK' & userInput == 'PAPER':
         #user wins the round
