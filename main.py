@@ -33,19 +33,16 @@ def compSelection():
         compInput = 'SCISSORS'
 
 
-#contains the user's response 
-userInput = input("Rock, Paper or Scissors: ")
-
-#Turns every letter of user's response to uppercase -> its better for comparison
-userInput = userInput.upper()
+#contains the user's response and turns it uppercase
+userInput = input("Rock, Paper or Scissors: ").upper()
 
 #Checking if the users response is valid
 if userInput != "ROCK" or userInput != "PAPER" or userInput != "SCISSORS":
     #if its not valid -> ask to user for another response
-    userInput = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors")
+    userInput = input("Your previous response was invalid, Try Again. Rock, Paper or Scissors: ")
 
 #run until currentRound equal numOfRounds
-while currentRound <= numOfRounds:
+while userWon < numOfRounds and userLost < numOfRounds:
 
     #always is true
     while True:
@@ -55,24 +52,24 @@ while currentRound <= numOfRounds:
         if userInput == "ROCK" or userInput == "PAPER" or userInput == "SCISSORS":
             break
         else:
-            userInput = input("Your previous response was invalid. Try Again. Rock, Paper or Scissors")
+            userInput = input("Your previous response was invalid. Try Again. Rock, Paper or Scissors: ")
 
     compSelection()
 
     #When computer's input is ROCK
-    if compInput == 'ROCK' & userInput == 'PAPER':
+    if compInput == 'ROCK' and userInput == 'PAPER':
         #user wins the round
         userWon = userWon + 1
         currentRound = currentRound + 1
         print('Computer: Rock')
         print('Player: PAPER')
-    if compInput == 'ROCK' & userInput == 'SCISSORS' :
+    if compInput == 'ROCK' and userInput == 'SCISSORS' :
         #user loses the round
         userLost = userLost + 1
         currentRound = currentRound + 1
         print('Computer: Rock')
         print('Player: Scissors')
-    if compInput == 'ROCK' & userInput == 'ROCK':
+    if compInput == 'ROCK' and userInput == 'ROCK':
         #user and computer draw
         userDrew = userDrew + 1
         currentRound = currentRound + 1
@@ -80,19 +77,19 @@ while currentRound <= numOfRounds:
         print('Player: Rock')
 
     #When computer's input is PAPER
-    if compInput == 'PAPER' & userInput == 'SCISSORS':
+    if compInput == 'PAPER' and userInput == 'SCISSORS':
         #user wins the round
         userWon = userWon + 1
         currentRound = currentRound + 1
         print('Computer: Paper')
         print('Player: Scissors')
-    if compInput == 'PAPER' & userInput == 'ROCK':
+    if compInput == 'PAPER' and userInput == 'ROCK':
         #user loses the round
         userLost = userLost + 1
         currentRound = currentRound + 1
         print('Computer: Paper')
         print('Player: Rock')
-    if compInput == 'PAPER' & userInput == 'PAPER':
+    if compInput == 'PAPER' and userInput == 'PAPER':
         #user and computer draw
         userDrew = userDrew + 1
         currentRound = currentRound + 1
@@ -100,30 +97,30 @@ while currentRound <= numOfRounds:
         print('Player: Paper')
 
     #When computer's input is SCISSORS
-    if compInput == 'SCISSORS' & userInput == 'ROCK':
+    if compInput == 'SCISSORS' and userInput == 'ROCK':
         #user wins the round
         userWon = userWon + 1
         currentRound = currentRound + 1
         print('Computer: Scissors')
         print('Player: Rock')
-    if compInput == 'SCISSORS' & userInput == 'PAPER':
+    if compInput == 'SCISSORS' and userInput == 'PAPER':
         #user loses the round
         userLost = userLost + 1
         currentRound = currentRound + 1
         print('Computer: Scissors')
         print('Player: Paper')
-    if compInput == 'SCISSORS' & userInput == 'SCISSORS':
+    if compInput == 'SCISSORS' and userInput == 'SCISSORS':
         #user and computer draw
         userDrew = userDrew + 1
         print('Computer: Scissors')
         print('Player: Scissors')
 
-    #evaluating the results
-    if userWon > numOfRounds:
-        print('You Won!')
-        print('Rounds Won: ', userWon, 'Rounds Lost: ', userLost, 'Rounds Drew: ', userDrew)
-        exit()
-    if userLost > numOfRounds:
-        print('You Lost')
-        print('Rounds Won: ', userWon, 'Rounds Lost: ', userLost, 'Rounds Drew: ', userDrew)
-        exit()
+    #evaluating the results after all rounds are played
+    if userWon > userLost:
+        print('You won the game!')
+    elif userLost > userWon:
+        print('You lost the game.')
+    else:
+        print('It\'s a tie.')
+
+print('Rounds Won:', userWon, 'Rounds Lost:', userLost, 'Rounds Drew:', userDrew)
