@@ -35,7 +35,7 @@ def compSelection():
         compInput = 'SCISSORS'
 
 #run until currentRound equal numOfRounds
-while userWon < numOfRounds and userLost < numOfRounds:
+while currentRound <= numOfRounds:
 
     # control the userInput loop
     valid_input = False  
@@ -111,7 +111,7 @@ while userWon < numOfRounds and userLost < numOfRounds:
         print('Computer: Scissors')
         print('Player: Scissors')
 
-#evaluating the results after all rounds are played
+#results after all rounds are played
 if userWon > userLost:
     print('You won the game!')
 elif userLost > userWon:
