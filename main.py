@@ -1,21 +1,12 @@
 #---------------------------------------------variables and functions
 import random
 
-#Total number of rounds
-numOfRounds = 1
-
-#current round
-currentRound = 0
-
 #Number of rounds user won & lost & drew
 userWon = 0
 userLost = 0
 userDrew = 0
 
 #---------------the computer's variables and functions
-
-#contains the computers response
-compInput = ''
 
 #computer's response
 def compSelection():

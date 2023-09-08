@@ -1,4 +1,26 @@
+#rounds user won, lost or drew
+userWon = 0
+userLost = 0
+userDrew = 0
+
+def compSelection():
+    #num equal a random floating point number between 1 and 3, including 3
+    num = random.uniform(1,3)
+
+    #if num = 1 then set the comp's value to ROCK
+    if(num == 1):
+        return 'ROCK'
+    #if num = 2 then set the comp's value to PAPER
+    elif(num == 2):
+        return 'PAPER'
+    #if num = 3 then set the comp's value to SCISSORS
+    elif(num == 3):
+        return 'SCISSORS'
+
 def round(user,computer):
+    global userWon
+    global userLost
+    global userDrew
 
     userSelection = user.upper()
     computerSelection = computer.upper()
@@ -54,5 +76,13 @@ def round(user,computer):
         userDrew = userDrew + 1
         print('Computer: Scissors')
         print('Player: Scissors')
-
     
+    if userWin == 5:
+        print('You Win!')
+        exit()
+    if userLost == 5:
+        print('You Win!')
+        exit()
+
+def game(userSelection):
+    round(userSelection, compSelection())
