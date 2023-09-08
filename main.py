@@ -47,6 +47,8 @@ if userInput != "ROCK" | userInput != "PAPER" | userInput != "SCISSORS":
 #run until currentRound equal numOfRounds
 while currentRound <= numOfRounds:
 
+    compSelection()
+    
     #When computer's input is ROCK
     if compInput == 'ROCK' & userInput == 'PAPER':
         #user wins the round
